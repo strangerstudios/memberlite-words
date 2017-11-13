@@ -39,6 +39,44 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	transform: scale(1.0);
 }
 
+.masthead_words .row {
+	border-top: 5px solid #EFEFEF;
+	padding-top: 2rem;
+}
+
+ .page .masthead_words h1 {
+	text-align: center;
+}
+
+.tml {
+	margin: 0 auto;
+}
+
+.blog article.hentry, .archive article.hentry {
+	border-top: 5px solid #EFEFEF;
+	padding-top: 2rem;
+}
+.blog article.hentry:first-child, .archive article.hentry:first-child {
+	border-top: none;
+}
+
+.post .entry-meta {
+	font-style: normal;
+}
+
+.post .entry-footer {
+	background: none;
+	border: none;
+	font-style: normal;
+	padding: 0;
+}
+
+.site-info {
+	border-top: 5px solid #EFEFEF;
+	padding-top: 2rem;
+}
+
+
 /*--------------------------------------------------------------
 10.7 Footer
 --------------------------------------------------------------*/
