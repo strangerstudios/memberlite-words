@@ -10,3 +10,38 @@ License: GPL-2.0+
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
+
+
+/*--------------------------------------------------------------
+10.1 Header and Member Meta
+--------------------------------------------------------------*/
+.site-branding {
+	text-align: center;
+}
+
+.site-branding a.custom-logo-link {
+	float: none;
+}
+.site-branding a.custom-logo-link .custom-logo {
+	max-height: 200px;
+}
+	
+.site-branding .site-branding_avatar {
+
+}
+
+.site-branding .site-branding_avatar a {
+	display: block;
+}
+
+.site-branding .site-branding_avatar a img {
+	border-radius: 50%;
+	transform: scale(1.0);
+}
+
+/*--------------------------------------------------------------
+10.7 Footer
+--------------------------------------------------------------*/
+.site-footer .site-info {
+	
+}
