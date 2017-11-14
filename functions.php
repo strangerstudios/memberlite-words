@@ -3,12 +3,18 @@
  * Memberlite [Words] Child Theme functions and definitions
  *
  * @package Memberlite 2.0
- * @subpackage Memberlite - Child Theme 1.0
+ * @subpackage Memberlite Words 1.0
  */
  
+//Define constants
+define( 'MEMBERLITE_WORDS_DIR', get_stylesheet_directory() );
+
+
 //Enqueue scripts and styles.
 function memberlite_words_enqueue_styles() {
+
     wp_enqueue_style( 'memberlite', get_template_directory_uri() . '/style.css' );
+
 }
 add_action( 'wp_enqueue_scripts', 'memberlite_words_enqueue_styles' );
 
@@ -56,6 +62,7 @@ add_action('widgets_init', 'memberlite_words_widgets_init', 20);
  * @return array (Maybe) modified page templates array.
  */
 function memberlite_words_filter_theme_page_templates( $page_templates, $this, $post ) {
+
 	unset( $page_templates['templates/content-sidebar.php'] );
 	unset( $page_templates['templates/fluid-width.php'] );
 	unset( $page_templates['templates/full-width.php'] );
@@ -64,6 +71,7 @@ function memberlite_words_filter_theme_page_templates( $page_templates, $this, $
 	unset( $page_templates['templates/narrow-width.php'] );
 	unset( $page_templates['templates/sidebar-content.php'] );
     return $page_templates;
+
 }
 add_filter( 'theme_page_templates', 'memberlite_words_filter_theme_page_templates', 20, 3 );
 
@@ -71,16 +79,19 @@ add_filter( 'theme_page_templates', 'memberlite_words_filter_theme_page_template
  * Remove unused parent theme customizer options.
  */
 function memberlite_words_customize_register() {  
+
 	global $wp_customize;
 	$wp_customize->remove_setting( 'nav_menu_search' );
 	$wp_customize->remove_setting( 'columns_ratio_header' );
 	$wp_customize->remove_setting( 'columns_ratio' );
 	$wp_customize->remove_setting( 'sidebar_location' );
 	$wp_customize->remove_setting( 'sidebar_location_blog' );
+
 } 
 //add_action( 'customize_register', 'memberlite_words_customize_register', 20 );
 
 function memberlite_words_page_title() {
+
 	global $post; 
 	
 	//capture output
@@ -211,5 +222,6 @@ function memberlite_words_page_title() {
 	$page_title_html = apply_filters('memberlite_words_page_title', $page_title_html);
 	
 	echo $page_title_html;
+
 }
 
