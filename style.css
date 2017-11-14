@@ -13,35 +13,51 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 /*--------------------------------------------------------------
-10.1 Header and Member Meta
+5.2 Menus
 --------------------------------------------------------------*/
-.site-branding {
-	text-align: center;
+.meta-navigation a, .header-right .widget_nav_menu a, .footer-navigation a
+	color: #AAA;
 }
 
+/*--------------------------------------------------------------
+10.1 Header and Member Meta
+--------------------------------------------------------------*/
+#meta-member aside {
+	margin: 0;
+}
+.site-branding {
+	margin: 0 0 10rem 0;
+	text-align: center;
+}
 .site-branding a.custom-logo-link {
 	float: none;
 }
 .site-branding a.custom-logo-link .custom-logo {
 	max-height: 200px;
-}
-	
+}	
 .site-branding .site-branding_avatar {
 
 }
-
 .site-branding .site-branding_avatar a {
 	display: block;
 }
-
 .site-branding .site-branding_avatar a img {
 	border-radius: 50%;
 	transform: scale(1.0);
 }
+.site-branding .site-title {
+	margin: 0;
+}
+.site-branding .site-description {
+	font-style: normal;
+	margin: 0;
+}
 
 .masthead_words .row {
+/*
 	border-top: 5px solid #EFEFEF;
 	padding-top: 2rem;
+*/
 }
 
  .page .masthead_words h1 {
@@ -52,12 +68,20 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	margin: 0 auto;
 }
 
+.hentry {
+	margin: 0 0 10rem 0;
+}
+
 .blog article.hentry, .archive article.hentry {
+/*
 	border-top: 5px solid #EFEFEF;
 	padding-top: 2rem;
+*/
 }
 .blog article.hentry:first-child, .archive article.hentry:first-child {
+/*
 	border-top: none;
+*/
 }
 
 .post .entry-meta {
@@ -71,15 +95,26 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	padding: 0;
 }
 
-.site-info {
-	border-top: 5px solid #EFEFEF;
-	padding-top: 2rem;
-}
-
-
 /*--------------------------------------------------------------
 10.7 Footer
 --------------------------------------------------------------*/
-.site-footer .site-info {
-	
+nav#footer-navigation {
+	background: #EFEFEF;
+	padding: 10rem 0;
+}
+.footer-navigation {
+	border: none;
+	padding: 0;
+	text-align: center;
+}
+.footer-navigation li {
+	border: none;
+}
+.site-footer .site-info p, .site-footer .site-info a {
+	color: #AAA;
+	font-style: normal;
+	font-size: .9em;
+}
+.site-footer .site-info a {
+	text-decoration: none;
 }
