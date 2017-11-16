@@ -19,6 +19,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	color: #AAA;
 }
 
+#meta-member aside.widget {
+    background-color: #474747;
+}
+
 /*--------------------------------------------------------------
 10.1 Header and Member Meta
 --------------------------------------------------------------*/
@@ -127,4 +131,46 @@ nav#footer-navigation {
 #memberlite-words-post-meta i:not(:first-child){
     margin-left:1.5%;
     
+}
+=======
+/*--------------------------------------------------------------
+11.1 Paid Memberships Pro Integrated Styles - Level Page & Checkout
+---------------------------------------------------------------*/
+
+a.pmpro_btn.pmpro_btn-select {
+    background-color: #474747;
+}
+
+#pmpro_levels_table thead tr th {
+    display: none;
+}
+
+.masthead_words h1.entry-title {
+    padding-bottom: 20px;
+    color: #b3b3b3;
+}
+
+#pmpro_levels_table tr.odd td {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#pmpro_levels_table tr.odd td strong {
+    font-style: italic;
+    font-weight: normal;
+}
+
+.pmpro_checkout-fields .input {
+    width: 100%;
+    padding: 7px;
+}
+
+.pmpro_checkout-fields label {
+    color: #474747;
+    text-transform: uppercase;
+    font-weight: bold;
+    }
+
+.pmpro_btn-submit-checkout {
+    background-color: #474747;
 }
