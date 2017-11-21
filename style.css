@@ -123,6 +123,16 @@ nav#footer-navigation {
 	text-decoration: none;
 }
 
+#memberlite-words-post-meta{
+    font-size:12px;
+    color:#474747;
+}
+
+#memberlite-words-post-meta i:not(:first-child){
+    margin-left:1.5%;
+    
+}
+=======
 /*--------------------------------------------------------------
 11.1 Paid Memberships Pro Integrated Styles - Level Page & Checkout
 ---------------------------------------------------------------*/
@@ -164,5 +174,3 @@ a.pmpro_btn.pmpro_btn-select {
 .pmpro_btn-submit-checkout {
     background-color: #474747;
 }
-
-
