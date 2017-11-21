@@ -7,11 +7,6 @@ global $memberlite_defaults;
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h1 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php echo memberlite_get_entry_meta($post, 'before'); ?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php 
@@ -32,7 +27,7 @@ global $memberlite_defaults;
 
 	<footer class="entry-footer">
 		<?php if ( 'post' == get_post_type() ) : // Hide meta text for pages on Search ?>
-			<?php echo memberlite_get_entry_meta($post, 'after'); ?>
+			<?php echo memberlite_words_get_entry_meta(); ?>
 		<?php endif; // End if 'post' == get_post_type() ?>
 
 		<?php edit_post_link( __( 'Edit', 'memberlite' ), '<span class="edit-link">', '</span>' ); ?>
