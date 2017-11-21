@@ -87,8 +87,14 @@ function memberlite_words_customize_register() {
 	$wp_customize->remove_setting( 'sidebar_location' );
 	$wp_customize->remove_setting( 'sidebar_location_blog' );
 
+		// Memberlite parent theme settings.
+	$wp_customize->remove_setting( 'posts_entry_meta_before' );
+	$wp_customize->remove_control( 'posts_entry_meta_before' );
+	$wp_customize->remove_setting( 'posts_entry_meta_after' );
+	$wp_customize->remove_control( 'posts_entry_meta_after' );
+
 } 
-//add_action( 'customize_register', 'memberlite_words_customize_register', 20 );
+add_action( 'customize_register', 'memberlite_words_customize_register', 20 );
 
 function memberlite_words_page_title() {
 
