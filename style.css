@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.meta-navigation a, .header-right .widget_nav_menu a, .footer-navigation a
+.meta-navigation a, .header-right .widget_nav_menu a, .footer-navigation a {
 	color: #AAA;
 }
 
@@ -30,7 +30,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	margin: 0;
 }
 .site-branding {
-	margin: 0 0 10rem 0;
+	margin: 2rem 0 2rem 0;
 	text-align: center;
 }
 .site-branding a.custom-logo-link {
@@ -39,9 +39,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .site-branding a.custom-logo-link .custom-logo {
 	max-height: 200px;
 }	
-.site-branding .site-branding_avatar {
+.site-branding .site-branding_avatar {}
 
-}
 .site-branding .site-branding_avatar a {
 	display: block;
 }

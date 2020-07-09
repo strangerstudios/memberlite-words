@@ -81,20 +81,31 @@ add_filter( 'theme_page_templates', 'memberlite_words_filter_theme_page_template
 function memberlite_words_customize_register() {  
 
 	global $wp_customize;
-	$wp_customize->remove_setting( 'nav_menu_search' );
-	$wp_customize->remove_setting( 'columns_ratio_header' );
-	$wp_customize->remove_setting( 'columns_ratio' );
-	$wp_customize->remove_setting( 'sidebar_location' );
-	$wp_customize->remove_setting( 'sidebar_location_blog' );
-	
-	// Memberlite parent theme settings.
-	$wp_customize->remove_setting( 'posts_entry_meta_before' );
-	$wp_customize->remove_control( 'posts_entry_meta_before' );
-	$wp_customize->remove_setting( 'posts_entry_meta_after' );
-	$wp_customize->remove_control( 'posts_entry_meta_after' );
+
+	$customizer_settings = apply_filters( 'memberlite_word_remove_customizer_settings', array(
+		'nav_menu_search',
+		'columns_ratio_header',
+		'columns_ratio',
+		'sidebar_location',
+		'sidebar_location_blog',
+		'posts_entry_meta_before',
+		'posts_entry_meta_after',
+		'page_breadcrumbs',
+		'post_breadcrumbs',
+		'archive_breadcrumbs',
+		'attachment_breadcrumbs',
+		'search_breadcrumbs',
+		'profile_breadcrumbs',
+		'delimiter'
+	) );
+
+	foreach( $customizer_settings as $setting ) {
+		$wp_customize->remove_control( $setting );
+		$wp_customize->remove_setting( $setting );
+	}
 
 } 
-add_action( 'customize_register', 'memberlite_words_customize_register', 20 );
+add_action( 'customize_register', 'memberlite_words_customize_register', 99 );
 
 function memberlite_words_page_title() {
 
@@ -238,11 +249,16 @@ function memberlite_words_page_title() {
 function memberlite_words_get_entry_meta(){
 	?>
 	<div id="memberlite-words-post-meta">
-		<i class="fa fa-user"></i> <?php echo get_the_author_posts_link(); ?>
 		<i class="fa fa-tags"></i> <?php echo get_the_category_list( ', ' ); ?>
 		<i class="fa fa-comments"></i><a href="<?php echo get_comments_link(); ?>"> <?php echo comments_number( __( 'Leave a Comment', 'memberlite-words' ) ); ?></a>
 		<i class="fa fa-calendar"></i> <?php echo get_the_date(); ?>
 	</div>
 	<?php
 }
+
+function memberlite_words_featured_image_links( $html, $post_id, $post_image_id ) {
+  $html = '<a href="' . get_permalink( $post_id ) . '">' . $html . '</a>';
+  return $html;
+}
+add_filter( 'post_thumbnail_html', 'memberlite_words_featured_image_links', 10, 3 );
 
