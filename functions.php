@@ -57,11 +57,11 @@ add_action('widgets_init', 'memberlite_words_widgets_init', 20);
  * Filter the theme page templates.
  *
  * @param array    $page_templates Page templates.
- * @param WP_Theme $this           WP_Theme instance.
+ * @param WP_Theme $theme_instance           WP_Theme instance.
  * @param WP_Post  $post           The post being edited, provided for context, or null.
  * @return array (Maybe) modified page templates array.
  */
-function memberlite_words_filter_theme_page_templates( $page_templates, $this, $post ) {
+function memberlite_words_filter_theme_page_templates( $page_templates, $theme_instance, $post ) {
 
 	unset( $page_templates['templates/content-sidebar.php'] );
 	unset( $page_templates['templates/fluid-width.php'] );
@@ -245,3 +245,4 @@ function memberlite_words_get_entry_meta(){
 	</div>
 	<?php
 }
+
