@@ -9,7 +9,6 @@
 //Define constants
 define( 'MEMBERLITE_WORDS_DIR', get_stylesheet_directory() );
 
-
 //Enqueue scripts and styles.
 function memberlite_words_enqueue_styles() {
 
@@ -34,7 +33,7 @@ function memberlite_words_setup() {
 	) );
 
 	// Unregister unused parent theme menu locations.
-	unregister_nav_menu('primary');
+	// unregister_nav_menu('primary');
 
 }
 add_action('after_setup_theme', 'memberlite_words_setup', 20);
@@ -196,28 +195,22 @@ function memberlite_words_page_title() {
 			<?php printf( __( 'Search Results for: %s', 'memberlite' ), '<span>' . get_search_query() . '</span>' ); ?>
 		</h1>
 		<?php
-	}
-	elseif(is_singular('post'))
-	{
+	} elseif( is_home() ) {
+		?>
+		<h1 class="page-title">
+		<?php 
+			if(get_option('page_for_posts'))
+				echo get_the_title(get_option('page_for_posts')); 
+		?></h1>
+		<?php
+	}elseif(is_singular('post')) {
 		?>
 		<div class="masthead-post-byline">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-			<?php
-				$memberlite_get_entry_meta_before = memberlite_get_entry_meta($post, 'before');
-				if(!empty($memberlite_get_entry_meta_before))
-				{
-					?>
-					<p class="entry-meta">
-						<?php echo memberlite_get_entry_meta($post, 'before'); ?>
-					</p><!-- .entry-meta -->
-					<?php
-				}
-			?>
 		</div>
 		<?php
 	}
-	elseif(is_home())
-	{
+	elseif(is_home()) {
 		?>
 		<h1 class="page-title">
 		<?php 
@@ -256,9 +249,20 @@ function memberlite_words_get_entry_meta(){
 	<?php
 }
 
+function memberlite_words_show_entry_meta() {
+	if ( 'post' == get_post_type() ) {
+		echo memberlite_words_get_entry_meta(); 
+	}	
+}
+add_action( 'before_content_single', 'memberlite_words_show_entry_meta' );
+add_action( 'after_content_archive', 'memberlite_words_show_entry_meta' );
+
+/** 
+ * Include a link automatically to featured images.
+ * @since 1.0
+ */
 function memberlite_words_featured_image_links( $html, $post_id, $post_image_id ) {
   $html = '<a href="' . get_permalink( $post_id ) . '">' . $html . '</a>';
   return $html;
 }
 add_filter( 'post_thumbnail_html', 'memberlite_words_featured_image_links', 10, 3 );
-

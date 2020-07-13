@@ -40,7 +40,7 @@
 					$mobile_defaults = array(
 						'theme_location' => 'primary',
 					);				
-					wp_nav_menu($mobile_defaults ); 				
+					wp_nav_menu($mobile_defaults); 				
 				}
 			?>
 			</nav>
@@ -63,8 +63,7 @@
 							<aside class="widget">
 							<?php 
 								global $current_user, $pmpro_pages;
-								if($user_ID)
-								{ 
+								if ( $user_ID ) { 
 									if(!empty($pmpro_pages)) {
 										$account_page = get_post($pmpro_pages['account']);
 										$user_account_link = '<a href="' . esc_url(pmpro_url("account")) . '">' . preg_replace("/\@.*/", "", $current_user->display_name) . '</a>';
@@ -76,8 +75,8 @@
 									<span class="user"><?php printf(__('Welcome, %s', 'memberlite'), $user_account_link);?></span>
 									<?php										
 								}
-								if($user_ID)
-								{
+								
+								if ( $user_ID ) {
 									$member_menu_defaults = array(
 										'theme_location' => 'member',
 										'container' => 'nav',
@@ -86,9 +85,7 @@
 										'fallback_cb' => 'memberlite_member_menu_cb',
 										'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
 									);	
-								}
-								else
-								{
+								} else {
 									$member_menu_defaults = array(
 										'theme_location' => 'member-logged-out',
 										'container' => 'nav',
@@ -124,6 +121,17 @@
 				<span class="site-description"><?php bloginfo( 'description' ); ?></span>
 			</div><!-- .site-branding -->
 		</div><!-- .row -->
+		<?php
+			$primary_menu_defaults = array(
+				'theme_location'  => 'primary',
+				'container'       => 'div',
+				'container_class' => 'main-navigation row',
+				'menu_class'      => 'menu large-12 columns',
+				'fallback_cb'     => false,
+			);
+
+			wp_nav_menu( $primary_menu_defaults );
+		?>
 	</header><!-- #masthead -->
 	<?php do_action('before_site_navigation'); ?>
 	<?php do_action('before_content'); ?>

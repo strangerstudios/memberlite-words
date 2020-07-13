@@ -15,6 +15,7 @@ if ( has_post_thumbnail() ) {
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php 
+			do_action( 'before_content_archive' );
 			$content_archives = get_theme_mod('content_archives'); 
 			if($content_archives == 'excerpt')
 				the_excerpt();
@@ -31,10 +32,7 @@ if ( has_post_thumbnail() ) {
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php if ( 'post' == get_post_type() ) : // Hide meta text for pages on Search ?>
-			<?php echo memberlite_words_get_entry_meta(); ?>
-		<?php endif; // End if 'post' == get_post_type() ?>
-
+		<?php do_action( 'after_content_archive' ); ?>
 		<?php edit_post_link( __( 'Edit', 'memberlite' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
