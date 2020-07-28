@@ -295,3 +295,13 @@ function memberlite_words_memberlite_before_content_single() {
 	}
 }
 add_action( 'memberlite_before_content_single', 'memberlite_words_memberlite_before_content_single' );
+
+/**
+ * Filter the supported Elememnts in the Memberlite Elements plugin.
+ *
+ */
+function memberlite_words_memberlite_elements_supported_elements( $memberlite_elements_supported_elements ) {
+	$memberlite_elements_supported_elements = array();
+	return $memberlite_elements_supported_elements;
+}
+add_filter( 'memberlite_elements_supported_elements', 'memberlite_words_memberlite_elements_supported_elements' );
