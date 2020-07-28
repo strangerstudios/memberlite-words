@@ -1,49 +1,90 @@
 /*
-Theme Name: Memberlite [Words]
+Theme Name: Memberlite Words
 Theme URI: http://demo.memberlitetheme.com/words/
-Description: [Words] can speak louder than pictures in this child theme for Memberlite.   
+Description: Words can speak louder than pictures in this child theme for Memberlite.
 Author: Kim Coleman, Travis Lima
-Author URI: http://www.memberlitetheme.com/  
+Author URI: https://memberlitetheme.com/  
 Template: memberlite
 Version: 1.0
 License: GPL-2.0+  
 License URI: http://www.gnu.org/licenses/gpl-2.0.html  
 */
 
-
-
+body,
+button,
+input,
+select,
+textarea,
+.btn,
+#main div.em-search-main button.em-search-submit {
+	color: #474747;
+}
 /*--------------------------------------------------------------
 5.2 Menus
 --------------------------------------------------------------*/
-.meta-navigation a, .header-right .widget_nav_menu a, .footer-navigation a {
-	color: #AAA;
+#site-navigation {
+	background: none;
+	border: none;
 }
-
-#meta-member aside.widget {
-	background-color: #474747;
-	color:white;
+#site-navigation .main-navigation > ul {
+	text-align: center;
 }
-
-.main-navigation {
-    padding-left: 40rem;
-    padding-top: 0;
-	border-bottom: 1px dotted #CCC;
+#site-navigation .main-navigation > ul li {
+	float: none;
+	display: inline-block;
 }
-
-@media all and ( max-width: 1100px ) {
-	.main-navigation{
-		padding-left:30rem;
-	}
+#site-navigation .main-navigation > ul li a {
+	border: none;
+	color: #474747;
 }
-
+/*--------------------------------------------------------------
+5.4 Prev/Next Navigation
+--------------------------------------------------------------*/
+.site-main .post-navigation {
+	margin-bottom: 5.8rem;
+}
 /*--------------------------------------------------------------
 10.1 Header and Member Meta
 --------------------------------------------------------------*/
-#meta-member aside {
+#meta-member {
+	position: fixed;
+    right: 2.9rem;
+    z-index: 10;
+}
+#meta-member .meta-member-inner {
+	background: #F1F1F1;
+	border-radius: 0;
+	color: #474747;
+	font-size: 1.8rem;
+}
+#meta-member .user {
+}
+#meta-member a {
+	color: #474747;
+	display: inline-block;
+	text-decoration: none;
+}
+#meta-member a:hover {
+	color: #000;
+}
+#meta-member .member-navigation li {
+	border-right: 1px solid #DDD;
+	display: inline-block;
 	margin: 0;
+	position: relative;
+}
+#meta-member .member-navigation li:last-child {
+	border: none;
+}
+#meta-member .member-navigation li a {
+	margin: 0 1rem;
+}
+#meta-member .member-navigation .sub-menu,
+#meta-member .member-navigation ul li:hover > ul {
+	display: none;
 }
 .site-branding {
-	margin: 2rem 0 2rem 0;
+	margin: 2.9rem 0;
 	text-align: center;
 }
 .site-branding a.custom-logo-link {
@@ -52,12 +93,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 .site-branding a.custom-logo-link .custom-logo {
 	max-height: 200px;
 }	
-.site-branding .site-branding_avatar {}
-
-.site-branding .site-branding_avatar a {
-	display: block;
-}
-.site-branding .site-branding_avatar a img {
+.site-branding a.custom-logo-link img {
 	border-radius: 50%;
 	transform: scale(1.0);
 }
@@ -68,76 +104,155 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 	font-style: normal;
 	margin: 0;
 }
-
-.masthead_words .row {
-/*
-	border-top: 5px solid #EFEFEF;
-	padding-top: 2rem;
-*/
+.masthead_words {
+	margin: 2.9rem 0;
 }
-
- .page .masthead_words h1 {
+.splash-image {
+	display: block;
+	margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    max-width: 1000%;
+    text-align: center;
+    width: auto;
+}
+.splash-image img {
+	max-width: 70%;
+}
+.category.archive .masthead_words,
+.search .masthead_words {
+	background: #F1F1F1;
+	border: 1px solid #CCC;
+	padding: 1.45rem;
 	text-align: center;
 }
-
-.tml {
-	margin: 0 auto;
+.page .masthead_words h1 {
+	text-align: center;
 }
-
+.single .masthead_words h1 {
+	margin: 0 0 1.45rem 0;
+}
 .hentry {
-	margin: 0 0 10rem 0;
+	margin: 2.9rem 0 8.7rem 0;
 }
-
-.blog article.hentry, .archive article.hentry {
-/*
-	border-top: 5px solid #EFEFEF;
-	padding-top: 2rem;
-*/
+.single .hentry {
+	margin-bottom: 2.9rem;
 }
-.blog article.hentry:first-child, .archive article.hentry:first-child {
-/*
-	border-top: none;
-*/
-}
-
-.post .entry-meta {
+#primary .hentry .entry-meta,
+#primary .entry-meta,
+#primary .entry-footer {
+	font-size: 1.4rem;
 	font-style: normal;
+	color: #474747;
+	margin-bottom: 2.9rem;
 }
-
+#primary .hentry .entry-meta a,
+#primary .entry-meta a,
+#primary .entry-footer a {
+	color: #474747;
+	text-decoration: none;
+}
+#primary .hentry .entry-meta a:hover,
+#primary .entry-meta a:hover,
+#primary .entry-footer a:hover {
+	border-bottom: 1px dotted #777;
+}
+#primary .entry-meta span {
+	display: inline-block;
+	margin-right: .9rem;
+}
+#primary .entry-meta span:before {
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 700;
+	padding-right: 3px;
+}
+#primary .entry-meta span.post_meta_author:before {
+	content: '\f007';
+}
+#primary .entry-meta span.post_meta_author_posts_link:before {
+	content: '\f007';
+}
+#primary .entry-meta span.post_meta_categories:before {
+	content: '\f5fd';
+}
+#primary .entry-meta span.post_meta_comments:before {
+	content: '\f086';
+}
+#primary .entry-meta span.post_meta_date:before {
+	content: '\f133';
+}
+#primary .entry-meta span.post_meta_permalink:before {
+	content: '\f0c1';
+}
+#primary .entry-meta span.post_meta_tags:before {
+	content: '\f02c';
+}
+#primary .entry-meta span.post_meta_time:before {
+	content: '\f017';
+}
+#primary .entry-meta span.post_meta_title:before {
+	content: '\f08d';
+}
+.post.entry-header-grid .entry-header {
+	display: block;
+}
+.post.entry-header-grid .entry-header .entry-title {
+	margin-bottom: 1.45rem;
+}
+.masthead-post-byline {
+	display: block;
+    margin: 1.45rem 0 0 0;
+}
 .post .entry-footer {
 	background: none;
 	border: none;
 	font-style: normal;
 	padding: 0;
 }
+.post.pmpro-no-access .entry-content {
+	border: none;
+}
 
 /*--------------------------------------------------------------
 10.7 Footer
 --------------------------------------------------------------*/
-nav#footer-navigation {
-	background: #EFEFEF;
-	padding: 10rem 0;
+.site-footer,
+.footer-widgets {
+	background: #F1F1F1;
+	color: #474747;
 }
-.footer-navigation {
-	border: none;
-	padding: 0;
+.footer-widgets {
+	padding: 2.9rem 0;
+}
+.footer-widgets a:not(.btn) {
+	color: #474747;
+}
+.footer-widgets a:hover:not(.btn) {
+	color: #474747;
+	border-bottom: 1px dotted #474747;
+}
+.footer-navigation ul {
+	border-top: 1px solid #CCC;
 	text-align: center;
 }
-.footer-navigation li {
+.footer-navigation ul li {
 	border: none;
 }
-.site-footer .site-info p, .site-footer .site-info a {
-	color: #AAA;
+.footer-navigation ul li a {
+	color: #474747;
+}
+.site-footer .site-info {
+	text-align: center;
+}
+.site-footer .site-info .copyright-textbox {
+	margin-bottom: 2.9rem;
+}
+.site-footer .site-info p,
+.site-footer .site-info a {
+	color: #474747;
 	font-style: normal;
-	font-size: .9em;
 }
 .site-footer .site-info a {
 	text-decoration: none;
-}
-
-#memberlite-words-post-meta{
-    font-size:12px;
-    color:#474747;
 }
 
 #memberlite-words-post-meta i:not(:first-child){
@@ -147,42 +262,96 @@ nav#footer-navigation {
 /*--------------------------------------------------------------
 11.1 Paid Memberships Pro Integrated Styles - Level Page & Checkout
 ---------------------------------------------------------------*/
-
-a.pmpro_btn.pmpro_btn-select {
-    background-color: #474747;
+div.pmpro_content_message {
+	background: #F1F1F1;
+	border: 1px solid #CCC;
+	border-radius: 0;
+	color: #474747;
+	padding: 2.9rem;
 }
-
 #pmpro_levels_table thead tr th {
     display: none;
 }
-
-.masthead_words h1.entry-title {
-	/* padding-bottom: 20px; */
-	margin:0;
-    /* color: #b3b3b3; */
+#pmpro_levels_table tr:first-child td {
+	border-top: 1px dotted #CCC;
 }
-
-#pmpro_levels_table tr.odd td {
-    font-weight: bold;
-    font-size: 20px;
+#pmpro_levels_table tr td:first-child {
+	font-size: 2.1rem;
+	font-weight: bold;
 }
-
-#pmpro_levels_table tr.odd td strong {
-    font-style: italic;
-    font-weight: normal;
+#pmpro_pricing_fields {
+	background: #F1F1F1;
+	border: 1px solid #CCC;
+	padding: 2.9rem;
 }
-
+#pmpro_pricing_fields h3 {
+	display: none;
+}
+#pmpro_pricing_fields > .pmpro_checkout-fields > p:nth-child(1) {
+	font-size: 2.2rem;
+}
+#pmpro_user_fields hr {
+	display: none;
+}
 .pmpro_checkout-fields .input {
-    width: 100%;
-    padding: 7px;
+	padding: .45rem;
+	width: 90%;
+}
+form.pmpro_form label,
+#loginform label {
+	font-weight: bold;
+}
+form.pmpro_form .pmpro_submit,
+form.pmpro_form #pmpro_processing_message {
+	text-align: center;
+}
+#primary .pmpro_login_wrap,
+#primary .pmpro_lost_password_wrap,
+#primary .pmpro_reset_password_wrap {
+	background: #F1F1F1;
+	border: 1px solid #CCC;
+	padding: 2.9rem;
+	max-width: 400px;
+	margin: 0 auto;
+}
+.pmpro_login_wrap input[type=text],
+.pmpro_login_wrap input[type=password],
+.pmpro_login_wrap input[type=email],
+.pmpro_lost_password_wrap input[type=text],
+.pmpro_reset_password_wrap input[type=password] {
+	max-width: 100%;
+	width: 100%;
+}
+.pmpro_login_wrap input[type="submit"],
+.pmpro_lost_password_wrap input[type="submit"],
+.pmpro_reset_password_wrap input[type="submit"] {
+	width: 100%;
+}
+.pmpro_login_wrap p.pmpro_actions_nav,
+.pmpro_lost_password_wrap p.pmpro_actions_nav,
+.pmpro_reset_password_wrap p.pmpro_actions_nav {
+	margin: 0;
+	text-align: center;
+}
+.pmpro_reset_password_wrap form.pmpro_form #pass-strength-result,
+form.pmpro_form .pmpro_change_password-fields #pass-strength-result {
+	font-size: 1.4rem;
+	margin: 5px 0 0 0;
+	max-width: 100%;
+	padding: 1px;
+}
+.pmpro_reset_password_wrap form.pmpro_form .lite,
+form.pmpro_form .pmpro_change_password-fields .lite {
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	margin-top: 5px;
 }
 
-.pmpro_checkout-fields label {
-    color: #474747;
-    text-transform: uppercase;
-    font-weight: bold;
-    }
-
-.pmpro_btn-submit-checkout {
-    background-color: #474747;
+@media only screen and (max-width: 767px) {
+	.site-header .row {display: block; }
+	.site-header .site-branding {margin: 1.45rem 0; }
+	button.menu-toggle {background: none; box-shadow: none; border-radius: 0; top: 15px; position: absolute; right: 15px; -webkit-transform: none; transform: none;}
+	button.menu-toggle:hover {color: #000; }
+	#meta-member {display: none; }
 }
+
