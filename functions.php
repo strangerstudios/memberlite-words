@@ -40,8 +40,8 @@ function memberlite_words_setup() {
 	// Remove support for a custom body background.
 	remove_theme_support( 'custom-background' );
 
-	// Unregister unused parent theme menu locations.
-	// unregister_nav_menu('primary');
+	// Unregister unused theme menu locations.
+	unregister_nav_menu( 'meta' );
 
 }
 add_action( 'after_setup_theme', 'memberlite_words_setup', 20 );
