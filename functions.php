@@ -297,6 +297,16 @@ function memberlite_words_memberlite_before_content_single() {
 add_action( 'memberlite_before_content_single', 'memberlite_words_memberlite_before_content_single' );
 
 /**
+ * Filter the recommended plugins to show on the Memberlite Guide.
+ *
+ */
+function memberlite_words_memberlite_plugins_recommended( $memberlite_plugins_recommended ) {
+	$memberlite_plugins_recommended = array( 'memberlite-shortcodes', 'paid-memberships-pro' );
+	return $memberlite_plugins_recommended;
+}
+add_filter( 'memberlite_plugins_recommended', 'memberlite_words_memberlite_plugins_recommended' );
+
+/**
  * Filter the supported Elememnts in the Memberlite Elements plugin.
  *
  */
