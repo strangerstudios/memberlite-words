@@ -297,7 +297,39 @@ function memberlite_words_memberlite_before_content_single() {
 add_action( 'memberlite_before_content_single', 'memberlite_words_memberlite_before_content_single' );
 
 /**
- * Filter the supported Elememnts in the Memberlite Elements plugin.
+ * Add Memberlite Words theme documentation to the Memberlite Guide.
+ *
+ */
+function memberlite_words_memberlite_guide_additional() { ?>
+	<img style="box-shadow: 0px 0px 5px #AAA; float: right; margin: 15px 30px; max-width: 300px; padding: 3px;" src="<?php echo wp_get_theme()->get_screenshot(); ?>" />
+	<h1><?php _e( 'Using Memberlite Words', 'memberlite-words' ); ?></h1>
+	<p>...</p>
+	<?php
+}
+add_action( 'memberlite_guide_additional', 'memberlite_words_memberlite_guide_additional' );
+
+/**
+ * Filter the recommended plugins to show on the Memberlite Guide.
+ *
+ */
+function memberlite_words_memberlite_plugins_recommended( $memberlite_plugins_recommended ) {
+	$memberlite_plugins_recommended = array( 'memberlite-shortcodes', 'paid-memberships-pro' );
+	return $memberlite_plugins_recommended;
+}
+add_filter( 'memberlite_plugins_recommended', 'memberlite_words_memberlite_plugins_recommended' );
+
+/**
+ * Filter the integrated plugins to show on the Memberlite Guide.
+ *
+ */
+function memberlite_words_memberlite_plugins_integrated( $memberlite_plugins_integrated ) {
+	$memberlite_plugins_integrated = array( 'paid-memberships-pro' );
+	return $memberlite_plugins_integrated;
+}
+add_filter( 'memberlite_plugins_integrated', 'memberlite_words_memberlite_plugins_integrated' );
+
+/**
+ * Filter the supported Elements in the Memberlite Elements plugin.
  *
  */
 function memberlite_words_memberlite_elements_supported_elements( $memberlite_elements_supported_elements ) {
