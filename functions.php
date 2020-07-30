@@ -113,12 +113,25 @@ function memberlite_words_customize_register() {
 add_action( 'customize_register', 'memberlite_words_customize_register', 99 );
 
 function memberlite_words_memberlite_defaults( $memberlite_defaults ) {
-	$memberlite_defaults['memberlite_webfonts'] = 'Georgia_Georgia';
+	$memberlite_defaults['memberlite_webfonts'] = 'Roboto-Slab_Roboto';
 	$memberlite_defaults['posts_entry_meta_before'] = '{post_categories} {post_comments} {post_date}';
 	$memberlite_defaults['copyright_textbox'] = '<a href="http://wordpress.org/" rel="license">' . __( 'Proudly powered by WordPress', 'memberlite' ) . '</a><span class="sep"> | </span><a href="https://memberlitetheme.com/child-themes/words/" rel="license">' . __( 'Theme: Memberlite Words', 'memberlite' ) . '</a>';
 
 	$memberlite_defaults['color_primary_background_elements'] = '#mobile-navigation, #mobile-navigation-height-col, .btn_primary, .btn_primary:link, .menu-toggle, .bg_primary, .banner_primary, .has-background.has-color-primary-background-color';
 	$memberlite_defaults['color_secondary_background_elements'] = '.btn_secondary, .btn_secondary:link, .memberlite_tabbable ul.memberlite_tabs li.memberlite_active a, .memberlite_tabbable ul.memberlite_tabs li.memberlite_active a:hover, .banner_secondary, #banner_bottom, .has-background.has-color-secondary-background-color';
+
+	$memberlite_defaults['memberlite_color_scheme'] = 'Default';
+	$memberlite_defaults['bgcolor_header'] = '#FFFFFF';
+	$memberlite_defaults['bgcolor_site_navigation'] = '#F2F2F2';
+	$memberlite_defaults['color_site_navigation'] = '#292929';
+	$memberlite_defaults['color_link'] = '#54C4B1';
+	$memberlite_defaults['color_meta_link'] = '#303030';
+	$memberlite_defaults['color_primary'] = '#F2F2F2';
+	$memberlite_defaults['color_secondary'] = '#B5B5B5';
+	$memberlite_defaults['color_action'] = '#51BCA7';
+
+
+
 
 /*	 array(
 		'memberlite_webfonts'                       => 'Lato_Lato',
@@ -303,7 +316,9 @@ add_action( 'memberlite_before_content_single', 'memberlite_words_memberlite_bef
 function memberlite_words_memberlite_guide_additional() { ?>
 	<img style="box-shadow: 0px 0px 5px #AAA; float: right; margin: 15px 30px; max-width: 300px; padding: 3px;" src="<?php echo wp_get_theme()->get_screenshot(); ?>" />
 	<h1><?php _e( 'Using Memberlite Words', 'memberlite-words' ); ?></h1>
-	<p>...</p>
+	<p>Memberlite Words is a lightweight child theme. Designed to be minimalistic and unobtrusive. Letting your content be the hero of this story. Perfect for writers, bloggers, and content creators. Memberlite Words makes it easy to tell the world your story.</p>
+	<p>Use Memberlite Words as a platform to share your thoughts and ideas. We have also integrated Memberlite Words to work with Paid Memberships Pro, the popular WordPress Membership plugin. This integration opens up a lot of possibilities for you, the creator. Build a "Go Fund Me" style website, restrict content your content behind a paywall, or build a community around your personal brand.</p>
+	<p> Created for the creator, Memberlite Words gives you the power to publish content beautifully.</p>
 	<?php
 }
 add_action( 'memberlite_guide_additional', 'memberlite_words_memberlite_guide_additional' );
@@ -337,3 +352,26 @@ function memberlite_words_memberlite_elements_supported_elements( $memberlite_el
 	return $memberlite_elements_supported_elements;
 }
 add_filter( 'memberlite_elements_supported_elements', 'memberlite_words_memberlite_elements_supported_elements' );
+
+
+// Filter - Add color schemes
+function memberlite_word_color_schemes() {
+	$word_schemes = array(
+		'default' => array(
+			'label'  => __( 'Words', 'memberlite' ),
+			'colors' => array(
+				'#FFFFFF', // header text color
+				'#F2F2F2', // background color
+				'#292929', // primary navigation background color
+				'#292929', // primary navigation link color
+				'#54C4B1', // link color
+				'#F2F2F2', // meta link color
+				'#F2F2F2', // primary color
+				'#292929', // secondary color
+				'#54C4B1', // action color
+			),
+		),
+	);
+	return $word_schemes;
+}
+add_filter( 'memberlite_color_schemes', 'memberlite_word_color_schemes' );
