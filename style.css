@@ -118,6 +118,11 @@ textarea,
 .splash-image img {
 	max-width: 70%;
 }
+.splash-image img.wp-post-image {
+	background: none;
+	padding: 0;
+	border: none;
+}
 .category.archive .masthead_words,
 .search .masthead_words {
 	background: #F1F1F1;
@@ -125,7 +130,8 @@ textarea,
 	padding: 1.45rem;
 	text-align: center;
 }
-.page .masthead_words h1 {
+.masthead_words,
+.entry-header {
 	text-align: center;
 }
 .single .masthead_words h1 {
@@ -353,11 +359,3 @@ form.pmpro_form .pmpro_change_password-fields .lite {
 	button.menu-toggle:hover {color: #000; }
 	#meta-member {display: none; }
 }
- /*--------------------------------------------------------------
-Added by Travis - 29/07/2020
---------------------------------------------------------------*/
-
-.entry-title, .entry-meta {
-	text-align: center;
-}
-

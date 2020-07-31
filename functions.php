@@ -315,10 +315,11 @@ add_action( 'memberlite_before_content_single', 'memberlite_words_memberlite_bef
  */
 function memberlite_words_memberlite_guide_additional() { ?>
 	<img style="box-shadow: 0px 0px 5px #AAA; float: right; margin: 15px 30px; max-width: 300px; padding: 3px;" src="<?php echo wp_get_theme()->get_screenshot(); ?>" />
-	<h1><?php _e( 'Using Memberlite Words', 'memberlite-words' ); ?></h1>
-	<p>Memberlite Words is a lightweight child theme. Designed to be minimalistic and unobtrusive. Letting your content be the hero of this story. Perfect for writers, bloggers, and content creators. Memberlite Words makes it easy to tell the world your story.</p>
-	<p>Use Memberlite Words as a platform to share your thoughts and ideas. We have also integrated Memberlite Words to work with Paid Memberships Pro, the popular WordPress Membership plugin. This integration opens up a lot of possibilities for you, the creator. Build a "Go Fund Me" style website, restrict content your content behind a paywall, or build a community around your personal brand.</p>
-	<p> Created for the creator, Memberlite Words gives you the power to publish content beautifully.</p>
+	<h1><?php _e( 'Memberlite Words', 'memberlite-words' ); ?> <span style="background: #AAA; border-radius: 10px; color: #FFF; display: inline-block; font-size: 10px; font-weight: bold; padding: 3px 8px;"><?php esc_html_e( 'ACTIVE', 'memberlite-words' ); ?></span></h1>
+	<p><?php esc_html_e( 'Memberlite Words is designed to be minimalistic and unobtrusive, letting your content be the hero. Perfect for writers, bloggers, and content creators, Memberlite Words makes it easy to tell the world your story.', 'memberlite-words' ); ?></p>
+	<p><?php esc_html_e( 'Use Memberlite Words as a platform to share your thoughts and ideas. We have also integrated Memberlite Words to work with Paid Memberships Pro, a WordPress Membership plugin. This integration opens up a lot of possibilities for you, the creator. Build a "Go Fund Me" style website, restrict content your content behind a paywall, or build a community around your personal brand.', 'memberlite-words' ); ?></p>
+	<h3><?php esc_html_e( 'Created for the creator, Memberlite Words gives you the power to publish content beautifully.' ); ?></h3>
+	<a class="button button-hero button-primary" href="https://memberlitetheme.com/themes/memberlite-words/?utm_source=memberlite-words&utm_medium=memberlite-guide&utm_campaign=documentation&utm_content=documentation" target="_blank"><?php esc_html_e( 'Documentation', 'memberlite-words' ); ?></a> <a class="button button-hero" href="https://demo.memberlitetheme.com/words/?utm_source=memberlite-words&utm_medium=memberlite-guide&utm_campaign=demo&utm_content=theme-demo">Theme Demo</a>
 	<?php
 }
 add_action( 'memberlite_guide_additional', 'memberlite_words_memberlite_guide_additional' );
