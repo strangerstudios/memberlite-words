@@ -211,7 +211,6 @@ textarea,
 .post.pmpro-no-access .entry-content {
 	border: none;
 }
-
 /*--------------------------------------------------------------
 10.7 Footer
 --------------------------------------------------------------*/
@@ -353,5 +352,12 @@ form.pmpro_form .pmpro_change_password-fields .lite {
 	button.menu-toggle {background: none; box-shadow: none; border-radius: 0; top: 15px; position: absolute; right: 15px; -webkit-transform: none; transform: none;}
 	button.menu-toggle:hover {color: #000; }
 	#meta-member {display: none; }
+}
+ /*--------------------------------------------------------------
+Added by Travis - 29/07/2020
+--------------------------------------------------------------*/
+
+.entry-title, .entry-meta {
+	text-align: center;
 }
 
