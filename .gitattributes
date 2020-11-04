@@ -1,4 +1,4 @@
 # Items to ignore when downloading a zip
-memberlite-words-banner.png ignore-export
+memberlite-words-banner.png export-ignore
 README.md export-ignore
 .gitattributes export-ignore
