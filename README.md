@@ -1,5 +1,5 @@
 # Memberlite [Words]: Tell the world your story with this Memberlite Child theme.
-===
+![Memberlite Words Theme](https://github.com/travislima/memberlite-words/blob/dev/images/memberlite-words-banner.png)
 
 ## Getting Started
 ---------------
