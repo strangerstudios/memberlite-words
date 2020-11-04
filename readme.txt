@@ -39,5 +39,5 @@ Use the Customize > Site Identity screen to add a custom logo (formatted for ret
 
 == Changelog ==
 
-**1.0**
+= 1.0 =
 * Initial version.

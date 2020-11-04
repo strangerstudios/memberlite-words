@@ -2,7 +2,6 @@
 ![Memberlite Words Theme](memberlite-words-banner.png)
 
 ## Getting Started
----------------
 
 Memberlite Words is a lightweight child theme. Designed to be minimalistic and unobtrusive. Letting your content be the hero of this story. Perfect for writers, bloggers, and content creators. Memberlite Words makes it easy to tell the world your story.
 
@@ -10,9 +9,4 @@ Use Memberlite Words as a platform to share your thoughts and ideas. We have als
 
 Created for the creator, Memberlite Words gives you the power to publish content beautifully.
 
-
-### Changelog
-== Changelog ==
-
-**1.0**
-* Initial version.
+[Visit the Memberlite Words Theme Homepage](https://memberlitetheme.com/themes/memberlite-words/)
